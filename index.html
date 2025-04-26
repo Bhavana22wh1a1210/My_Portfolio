@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Icons -->
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <h1 style="color: #ffffff;">Hey, I'm Bhavana</h1> <!-- White color for good contrast -->
+    <i style="color: #ffeb3b; display: block; margin-top: 10px;">Driven by Innovation - Empowered by Collaboration</i> <!-- Light Yellow -->
+    <p style="color: #f8f9fa; margin-top: 15px;">
+      A hardworking undergraduate specialized in Information Technology, driven by a love for solving challenges and a constant urge to explore new technologies. Eager to make meaningful contributions and grow through every opportunity.
+    </p>
+    <div class="profile-pic">
+      <img src="c:\Users\Lenovo\Downloads\WhatsApp Image 2025-04-26 at 1.46.36 PM (1).jpeg" alt="My Photo">
+    </div>
+  </header>
+
+  <!-- Skills Section -->
+  <section class="skills">
+    <h2>My Skills</h2>
+    <div class="skill-category">
+      <h3>Programming Languages</h3>
+      <div class="skills-grid">
+        <div class="skill-card">C</div>
+        <div class="skill-card">Java</div>
+        <div class="skill-card">SQL</div>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3>Web Development</h3>
+      <div class="skills-grid">
+        <div class="skill-card">HTML</div>
+        <div class="skill-card">CSS</div>
+        <div class="skill-card">JavaScript</div>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3>Databases</h3>
+      <div class="skills-grid">
+        <div class="skill-card">MySQL</div>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3>Tools & Software</h3>
+      <div class="skills-grid">
+        <div class="skill-card">VS Code</div>
+        <div class="skill-card">Google Colab</div>
+        <div class="skill-card">SQL Workbench</div>
+        <div class="skill-card">Eclipse</div>
+        <div class="skill-card">GitHub</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="portfolio">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>GIFTWHIZ </h3>
+        <img src="c:\Users\Lenovo\Downloads\WhatsApp Image 2025-04-26 at 1.08.21 PM.jpeg" alt="Project 1">
+        <div class="project-info">
+        <b>Corporate Gifting Web Application</b>
+        <p>This Application is built with HTML, CSS, and JavaScript for a responsive front-end, and Spring framework with SQL for backend operations. It allows users to order gifts like cakes, chocolates, dry fruits, and personalized items, with efficient inventory management and order tracking. </p>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>CNN Model Implementation with Transfer Learning </h3>
+        <img src="c:\Users\Lenovo\Downloads\WhatsApp Image 2025-04-26 at 1.08.17 PM.jpeg" alt="Project 2">
+        <div class="project-info">
+          <b>Image Classification Project</b>
+        <p>Developed and fine-tuned Convolutional Neural Network (CNN) models using transfer learning techniques.Successfully implemented and evaluated models on benchmark datasets MNIST and CIFAR-10, achieving strong performance in image classification tasks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Contact Section -->
+<!-- Contact Section -->
+<section class="contact" style="background-color: #f0fff0; padding: 40px; border-radius: 20px; text-align: center;">
+    <h2 style="color: #2e8b57; font-size: 2.5rem; letter-spacing: 1px; font-weight: bold;">Let's Connect!</h2>
+    <p style="color: #333; font-size: 1.2rem; margin-bottom: 30px;">
+      If you're interested in collaborating, working together, or have any queries, feel free to reach out. I'm always excited to connect and create something impactful!
+    </p>
+  
+    <form id="contactForm" action="https://formspree.io/f/xnndndro" method="POST" class="contact-form" style="max-width: 600px; margin: 0 auto;">
+      <label style="display: block; margin-bottom: 15px; font-weight: bold; color: #2e8b57; text-align: left;">
+        Your Email:
+        <input type="email" name="email" required 
+               style="width: 100%; padding: 10px; margin-top: 8px; border-radius: 8px; border: 1px solid #ccc; transition: all 0.3s;">
+      </label>
+  
+      <label style="display: block; margin-bottom: 20px; font-weight: bold; color: #2e8b57; text-align: left;">
+        Your Message:
+        <textarea name="message" required 
+                  style="width: 100%; padding: 10px; margin-top: 8px; border-radius: 8px; border: 1px solid #ccc; height: 120px; transition: all 0.3s;"></textarea>
+      </label>
+  
+      <button type="submit" style="background-color: #2e8b57; color: white; padding: 12px 24px; font-size: 1.1rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s;">
+        Send Message
+      </button>
+    </form>
+  
+    <p id="successMessage" style="color: #2e8b57; font-weight: bold; margin-top: 20px; display: none;">Thank you! Your message has been sent. 🚀</p>
+  </section>
+  
+  <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">↑</button>
+
+  <!-- Add this script just before closing </body> -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+  
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault(); // Stop form from submitting normally
+  
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+  
+      if (response.ok) {
+        form.reset();
+        successMessage.style.display = 'block';
+      } else {
+        alert('Oops! Something went wrong. Please try again later.');
+      }
+    });
+  </script>
+  
+  
+  
+
+ <!-- Footer with Social Links -->
+<footer class="footer" style="background-color: #f0fff0; padding: 20px; text-align: center;">
+    <h3 style="color: #2e8b57; font-size: 2rem; margin-bottom: 20px;">Connect with Me</h3>
+    <div class="social-icons" style="font-size: 2rem;">
+      <a href="https://www.linkedin.com/in/bvr-bhavana-85a135259" target="_blank" style="margin: 0 15px; color: #0e76a8;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://leetcode.com/u/bhavana2005/" target="_blank" style="margin: 0 15px; color: #FFA116;">
+        <i class="fas fa-code"></i>
+      </a>
+      <a href="mailto:bvrbhavana7@gmail.com" style="margin: 0 15px; color: #EA4335;">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </footer>
+  
+
+<!-- Add this script just before closing </body> -->
+<script>
+  const form1 = document.getElementById('contactForm');
+  const formSuccessMessage = document.getElementById('successMessage'); 
+
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault(); // Stop form from submitting normally
+
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      form.reset();
+      successMessage.style.display = 'block';
+    } else {
+      alert('Oops! Something went wrong. Please try again later.');
+    }
+  });
+
+  // Show button when user scrolls down 100px
+  window.onscroll = function () {
+    const btn = document.getElementById("scrollBtn");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Scroll to top smoothly
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>  
+
+</body>
+</html>
