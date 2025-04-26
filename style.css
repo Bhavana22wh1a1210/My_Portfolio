@@ -36,7 +36,8 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;     /* Make it a perfect circle */
-  object-fit: cover;      /* Crop image to cover the circle nicely */
+  object-fit: cover;    /* Crop image to cover the circle nicely */
+      overflow: hidden; /* Important */
   border: 5px solid white; /* Optional: nice border around image */
   box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: soft shadow */
   margin-top: 20px;
